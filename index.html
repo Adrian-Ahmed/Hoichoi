@@ -1,0 +1,54 @@
+<html>
+<head>
+    <meta charset="UTF-8"> <!-- এই লাইনটা যোগ করলাম, এটা বাংলা টেক্সট ঠিক দেখাবে -->
+    <title>Verification Complete</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .message {
+            font-size: 36px;
+            text-align: center;
+            color: #333;
+            text-transform: uppercase;
+        }
+        .developer {
+            position: absolute;
+            bottom: 20px;
+            font-size: 18px;
+            background: linear-gradient(45deg, #ff00cc, #3333ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            const currentDate = new Date().toLocaleDateString('en-GB'); // ফরম্যাট: DD/MM/YYYY
+            document.getElementById("dateDisplay").innerHTML = "আজকের তারিখ: " + currentDate;
+          
+            window.location.href = "adrian-hoichoi://start?date=" + encodeURIComponent(currentDate);
+            
+            setTimeout(function() {
+                document.getElementById("dateDisplay").innerHTML += "<br>অ্যাপটি ইনস্টল করা নেই, ইনস্টল করে নাও!";
+            }, 2000);
+        };
+    </script>
+</head>
+<body>
+    <div class="message">
+        আজকের ভেরিফিকেশন সম্পন্ন হয়েছে।<br>
+        আপনাকে আগামীকাল পুনরায় ভেরিফিকেশন করতে হবে!<br>
+        <span id="dateDisplay"></span>
+    </div>
+    <div class="developer">
+        Developer-@Zone_Adrian
+    </div>
+</body>
+</html>
